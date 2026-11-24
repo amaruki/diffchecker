@@ -1,13 +1,16 @@
 # Diffcheck
 
 [![CI](https://github.com/amaruki/diffchecker/actions/workflows/ci.yml/badge.svg)](https://github.com/amaruki/diffchecker/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Bun](https://img.shields.io/badge/Bun-%3E%3D1.4-f9f1e1?logo=bun&logoColor=000)](https://bun.sh)
-[![React 19](https://img.shields.io/badge/React-19-61dafb?logo=react&logoColor=000)](https://react.dev)
-[![TypeScript](https://img.shields.io/badge/TypeScript-Strict-3178c6?logo=typescript&logoColor=fff)](https://www.typescriptlang.org)
-[![Privacy](https://img.shields.io/badge/Privacy-100%25%20Local--Only-16a34a)](#privacy--security)
+[![Live App](docs/badges/live.svg)](https://diffchecker.amaruki.my.id)
+[![License: MIT](docs/badges/license-mit.svg)](LICENSE)
+[![Bun](docs/badges/bun.svg)](https://bun.sh)
+[![React 19](docs/badges/react.svg)](https://react.dev)
+[![TypeScript](docs/badges/typescript.svg)](https://www.typescriptlang.org)
+[![Privacy](docs/badges/local-only.svg)](#privacy--security)
 
 **Privacy-first, local-only browser diff tool for Excel spreadsheets (`.xlsx`/`.xlsm`), plain text, and JSON.**
+
+> **Try it live:** **[diffchecker.amaruki.my.id](https://diffchecker.amaruki.my.id)** ([Spreadsheet](https://diffchecker.amaruki.my.id) · [Text & JSON](https://diffchecker.amaruki.my.id/#text))
 
 Files are parsed and diffed entirely inside dedicated browser Web Workers—nothing is ever uploaded to a server, and production builds enforce a strict `connect-src 'self'` Content Security Policy.
 
