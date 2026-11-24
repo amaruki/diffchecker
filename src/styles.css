@@ -1,0 +1,292 @@
+@import "tailwindcss" source("./");
+
+@custom-variant dark (&:is(.dark *));
+
+@font-face {
+  font-family: "Inter";
+  src: url("./assets/fonts/inter-latin-wght-normal.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("./assets/fonts/jetbrains-mono-latin-wght-normal.woff2") format("woff2");
+  font-weight: 100 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: light;
+  --background: oklch(0.978 0.002 250);
+  --foreground: oklch(0.155 0.006 250);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.155 0.006 250);
+  --surface-subtle: oklch(0.962 0.003 250);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.155 0.006 250);
+  --primary: oklch(0.205 0.008 250);
+  --primary-foreground: oklch(0.988 0 0);
+  --signal: oklch(0.49 0.145 245);
+  --signal-subtle: oklch(0.952 0.016 245);
+  --secondary: oklch(0.948 0.004 250);
+  --secondary-foreground: oklch(0.24 0.008 250);
+  --muted: oklch(0.955 0.003 250);
+  --muted-foreground: oklch(0.455 0.008 250);
+  --accent: oklch(0.952 0.016 245);
+  --accent-foreground: oklch(0.39 0.13 245);
+  --destructive: oklch(0.55 0.19 25);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.892 0.004 250);
+  --border-strong: oklch(0.77 0.006 250);
+  --input: oklch(0.815 0.005 250);
+  --ring: var(--signal);
+
+  --radius: 0.5rem;
+  --tracking-normal: -0.008em;
+  --spacing: 0.25rem;
+
+  --shadow-2xs: 0 1px 2px rgb(0 0 0 / 0.05);
+  --shadow-xs: 0 1px 2px rgb(0 0 0 / 0.04);
+  --shadow-sm: 0 1px 3px rgb(0 0 0 / 0.06), 0 1px 2px rgb(0 0 0 / 0.04);
+  --shadow-md: 0 6px 16px -4px rgb(0 0 0 / 0.09), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+  --shadow-lg: 0 18px 40px -10px rgb(0 0 0 / 0.16), 0 4px 12px -4px rgb(0 0 0 / 0.08);
+
+  /* Semantic diff palette — calibrated independently of UI chrome. */
+  --add-fg: #156235;
+  --add-bg: #ebf8ef;
+  --add-mark: #bce8cb;
+  --rem-fg: #a12525;
+  --rem-bg: #fdf0ef;
+  --rem-mark: #f8c6c3;
+  --chg-fg: #854d0e;
+  --chg-bg: #fef7e2;
+  --chg-mark: #f8dc94;
+  --hatch: repeating-linear-gradient(135deg, transparent 0 5px, oklch(0.16 0.005 250 / 0.045) 5px 7px);
+  --merge-dot: oklch(0.45 0.008 250 / 0.3);
+
+  --scrollbar-thumb: oklch(0.55 0.006 250);
+  --scrollbar-track: oklch(0.962 0.003 250);
+}
+
+.dark {
+  color-scheme: dark;
+  --background: oklch(0.135 0.004 250);
+  --foreground: oklch(0.95 0.004 250);
+  --card: oklch(0.172 0.005 250);
+  --card-foreground: oklch(0.95 0.004 250);
+  --surface-subtle: oklch(0.202 0.005 250);
+  --popover: oklch(0.185 0.005 250);
+  --popover-foreground: oklch(0.95 0.004 250);
+  --primary: oklch(0.945 0.004 250);
+  --primary-foreground: oklch(0.145 0.005 250);
+  --signal: oklch(0.70 0.125 235);
+  --signal-subtle: oklch(0.235 0.028 235);
+  --secondary: oklch(0.225 0.006 250);
+  --secondary-foreground: oklch(0.90 0.005 250);
+  --muted: oklch(0.212 0.005 250);
+  --muted-foreground: oklch(0.69 0.008 250);
+  --accent: oklch(0.235 0.028 235);
+  --accent-foreground: oklch(0.80 0.105 235);
+  --destructive: oklch(0.58 0.17 25);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.268 0.006 250);
+  --border-strong: oklch(0.37 0.008 250);
+  --input: oklch(0.34 0.007 250);
+  --ring: var(--signal);
+
+  --shadow-2xs: 0 1px 2px rgb(0 0 0 / 0.25);
+  --shadow-xs: 0 1px 2px rgb(0 0 0 / 0.2);
+  --shadow-sm: 0 2px 6px rgb(0 0 0 / 0.3);
+  --shadow-md: 0 8px 20px -4px rgb(0 0 0 / 0.45);
+  --shadow-lg: 0 22px 48px -10px rgb(0 0 0 / 0.65);
+
+  --add-fg: #7ee2a8;
+  --add-bg: #12291c;
+  --add-mark: #1f5034;
+  --rem-fg: #f9a29b;
+  --rem-bg: #2e1518;
+  --rem-mark: #5b2328;
+  --chg-fg: #f6cf78;
+  --chg-bg: #2a200f;
+  --chg-mark: #513c15;
+  --hatch: repeating-linear-gradient(135deg, transparent 0 5px, oklch(0.96 0.004 250 / 0.048) 5px 7px);
+  --merge-dot: oklch(0.75 0.008 250 / 0.3);
+
+  --scrollbar-thumb: oklch(0.50 0.006 250);
+  --scrollbar-track: oklch(0.172 0.005 250);
+}
+
+@media (prefers-contrast: more) {
+  :root {
+    --border: oklch(0.68 0.006 250);
+    --input: oklch(0.62 0.006 250);
+    --muted-foreground: oklch(0.36 0.008 250);
+  }
+  .dark {
+    --border: oklch(0.45 0.008 250);
+    --input: oklch(0.52 0.008 250);
+    --muted-foreground: oklch(0.80 0.008 250);
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-surface-subtle: var(--surface-subtle);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-signal: var(--signal);
+  --color-signal-subtle: var(--signal-subtle);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-rule: color-mix(in oklab, var(--border), var(--muted-foreground) 55%);
+  --color-add: var(--add-fg);
+  --color-add-tint: var(--add-bg);
+  --color-add-mark: var(--add-mark);
+  --color-remove: var(--rem-fg);
+  --color-remove-tint: var(--rem-bg);
+  --color-remove-mark: var(--rem-mark);
+  --color-change: var(--chg-fg);
+  --color-change-tint: var(--chg-bg);
+  --color-change-mark: var(--chg-mark);
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --shadow-2xs: var(--shadow-2xs);
+  --shadow-xs: var(--shadow-xs);
+  --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+
+  --tracking-tighter: calc(var(--tracking-normal) - 0.04em);
+  --tracking-tight: calc(var(--tracking-normal) - 0.018em);
+  --tracking-wide: calc(var(--tracking-normal) + 0.025em);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    accent-color: var(--signal);
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-background font-sans text-sm leading-normal tracking-normal text-foreground;
+  }
+
+  ::selection {
+    background-color: color-mix(in oklab, var(--signal) 22%, transparent);
+    color: inherit;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-ring;
+  }
+
+  button:not(:disabled),
+  summary {
+    @apply cursor-pointer;
+  }
+
+  button:disabled {
+    @apply opacity-45;
+  }
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    accent-color: var(--signal);
+  }
+}
+
+.workbench-scroll {
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+@supports not (scrollbar-color: auto) {
+  .workbench-scroll {
+    scrollbar-width: auto;
+  }
+  .workbench-scroll::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  .workbench-scroll::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border: 2px solid var(--scrollbar-track);
+    border-radius: 999px;
+  }
+  .workbench-scroll::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  dialog[open] {
+    animation: dialog-in 160ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  dialog[open]::backdrop {
+    animation: backdrop-in 160ms ease-out both;
+  }
+}
+
+@keyframes dialog-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.985);
+  }
+}
+
+@keyframes backdrop-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@media (forced-colors: active) {
+  :focus-visible {
+    outline: 2px solid Highlight !important;
+    outline-offset: 2px !important;
+  }
+  [data-cell-selected="true"],
+  [data-line-selected="true"] {
+    outline: 2px solid Highlight !important;
+    outline-offset: -2px !important;
+  }
+  [data-gutter-status="added"] {
+    border-left: 3px solid Highlight !important;
+  }
+  [data-gutter-status="removed"] {
+    border-left: 3px dashed Highlight !important;
+  }
+  [data-gutter-status="changed"] {
+    border-left: 3px dotted Highlight !important;
+  }
+}

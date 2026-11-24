@@ -1,0 +1,10 @@
+# Release checklist
+
+1. Update the version number in package.json
+2. Run the full test suite and the linter
+3. Build the production bundle
+4. Smoke-test the build on staging
+5. Tag the release in git
+
+Owner: platform team
+Status: approved

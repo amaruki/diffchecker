@@ -1,0 +1,64 @@
+{
+  "name": "diffchecker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Privacy-first, local-only browser diff tool for Excel (.xlsx/.xlsm), Text, and JSON.",
+  "license": "MIT",
+  "author": "amaruki",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amaruki/diffchecker.git"
+  },
+  "homepage": "https://github.com/amaruki/diffchecker#readme",
+  "bugs": {
+    "url": "https://github.com/amaruki/diffchecker/issues"
+  },
+  "keywords": [
+    "diff",
+    "diff-tool",
+    "xlsx",
+    "excel",
+    "spreadsheet",
+    "json-diff",
+    "text-diff",
+    "react",
+    "typescript",
+    "vite",
+    "bun",
+    "web-workers",
+    "local-first",
+    "privacy"
+  ],
+  "type": "module",
+  "scripts": {
+    "dev": "bun --bun vite",
+    "build": "bun run typecheck && bun --bun vite build",
+    "preview": "bun --bun vite preview",
+    "typecheck": "tsc --noEmit -p tsconfig.app.json && tsc --noEmit -p tsconfig.node.json",
+    "test": "bun test",
+    "test:smoke": "bun run build && bun scripts/smoke-test.ts",
+    "samples": "bun scripts/make-samples.ts",
+    "samples:large": "bun scripts/make-samples.ts --large"
+  },
+  "dependencies": {
+    "@base-ui/react": "1.4.1",
+    "@tanstack/react-virtual": "3.14.26",
+    "class-variance-authority": "0.7.1",
+    "clsx": "2.1.1",
+    "lucide-react": "1.70.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "tailwind-merge": "3.7.0",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "4.3.5",
+    "@types/bun": "1.4.4",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.3.0",
+    "tailwindcss": "4.3.5",
+    "typescript": "7.0.2",
+    "vite": "8.3.8"
+  }
+}

@@ -1,0 +1,49 @@
+name: Bug Report
+description: Report a bug or unexpected behavior in Diffcheck
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug! **Do not attach confidential or sensitive files** to public issues—use minimal, anonymized sample data instead.
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Affected Mode
+      options:
+        - Spreadsheet (.xlsx / .xlsm)
+        - Text & JSON
+        - Both / General UI
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Browser & OS
+      placeholder: "e.g., Chrome 131 on Linux / Firefox 133 on macOS"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: Describe the bug clearly, including any error messages shown.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: Share minimal anonymized inputs or steps to trigger the issue.
+      placeholder: |
+        1. Open Spreadsheet / Text & JSON mode
+        2. Load ...
+        3. Toggle option ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What did you expect to happen instead?

@@ -1,0 +1,29 @@
+name: Feature Request
+description: Suggest an improvement or new capability for Diffcheck
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Mode
+      options:
+        - Spreadsheet (.xlsx / .xlsm)
+        - Text & JSON
+        - Both / General UI
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or use case
+      description: What workflow or comparison case is currently difficult or missing?
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution
+      description: Describe how you envision this working.
+    validations:
+      required: true
